@@ -12,3 +12,5 @@ subfiles/.ssh/id_rsa.GitHub_goya5858
 *.zip
 */.DS_Store
 .DS_Store
+
+working/outputs/*
