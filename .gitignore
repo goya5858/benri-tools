@@ -4,6 +4,9 @@ input/*
 input/models/*
 !input/models/.gitkeep
 
+working/*
+!working/.gitkeep
+
 subfiles/.ssh/*
 subfiles/.kaggle/kaggle.json
 subfiles/.ssh/env.json
