@@ -1,0 +1,22 @@
+FROM pytorch/pytorch:latest
+
+RUN pip3 install --upgrade pip && \
+    pip3 install \ 
+    pandas         matplotlib  seaborn \
+    sklearn        lightgbm \
+    albumentations torchvision timm \
+    jupyter \
+    slugify && \
+    pip3 install --upgrade --force-reinstall --no-deps kaggle && \
+    pip3 install -U ipykernel --user
+    
+RUN apt update -y && \
+    apt install git -y && \
+    apt install -y curl jq git-secret && \
+    apt-get install unzip
+
+COPY ./subfiles/.kaggle/ /root/.kaggle
+COPY ./subfiles/.ssh /root/.ssh
+
+COPY ./subfiles/git-script-for-docker.sh /root
+ENTRYPOINT ["sh", "/root/git-script-for-docker.sh"]

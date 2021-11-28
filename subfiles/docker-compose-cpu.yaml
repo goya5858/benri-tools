@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+    ml-container:
+        build: .
+        container_name: titanic-cont
+        ports:
+            - "10000:8888"
+        volumes:
+            - ".:/home/ubuntu/work" 
+        working_dir: "/home/ubuntu/work"
+        tty: true
+        stdin_open: true

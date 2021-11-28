@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+    ml-container:
+        build: .
+        container_name: titanic-cont
+        ports:
+            - "10000:8888"
+        volumes:
+            - ".:/home/ubuntu/work" 
+        working_dir: "/home/ubuntu/work"
+        deploy:
+            resources:
+              reservations:
+                devices:
+                  - capabilities: [gpu]
+        tty: true
+        stdin_open: true
