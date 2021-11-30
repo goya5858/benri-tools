@@ -7,6 +7,8 @@ input/models/*
 working/*
 !working/.gitkeep
 
+sample/*
+
 subfiles/.ssh/*
 subfiles/.kaggle/kaggle.json
 subfiles/.ssh/env.json

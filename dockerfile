@@ -5,6 +5,7 @@ FROM pytorch/pytorch:latest
 
 RUN apt update -y && \
     apt install git -y && \
+    apt install wget -y && \
     apt install -y curl jq git-secret && \
     apt-get install unzip
 
