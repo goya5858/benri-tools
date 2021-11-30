@@ -2,7 +2,7 @@ version: "3.8"
 services:
     ml-container:
         build: .
-        container_name: titanic-cont
+        container_name: main-container
         ports:
             - "10000:8888"
         volumes:

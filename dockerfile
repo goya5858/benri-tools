@@ -22,6 +22,7 @@ RUN pip3 install --upgrade pip && \
     timm         transformers\
     mlflow       optuna \
     hydra-core 　omegaconf \
+    dvc \
     onnx \
     jupyter \
     albumentations \
