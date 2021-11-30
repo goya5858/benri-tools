@@ -7,7 +7,7 @@ input/models/*
 working/*
 !working/.gitkeep
 
-sample/*
+DVC_test/*
 
 subfiles/.ssh/*
 subfiles/.kaggle/kaggle.json
