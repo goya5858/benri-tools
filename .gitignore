@@ -8,6 +8,7 @@ working/*
 !working/.gitkeep
 
 DVC_test/*
+!DVC_test/DVC_sample.sh
 
 subfiles/.ssh/*
 subfiles/.kaggle/kaggle.json
