@@ -1,17 +1,17 @@
-week_0_PytorchLightning/lightning_logs/*
-week_0_PytorchLightning/models/*
+chapter_0_PytorchLightning/lightning_logs/*
+chapter_0_PytorchLightning/models/*
 
-week_1_mlflow/mlruns/*
-week_1_mlflow/lightning_logs/*
-week_1_mlflow/models/*
+chapter_1_mlflow/mlruns/*
+chapter_1_mlflow/lightning_logs/*
+chapter_1_mlflow/models/*
 
-week_2_Hydra/outputs/*
-week_2_Hydra/models/*
+chapter_2_Hydra/outputs/*
+chapter_2_Hydra/models/*
 
-week_3_dvc/outputs/*
-week_3_dvc/models/*
+chapter_3_dvc/outputs/*
+chapter_3_dvc/models/*
 
-week_4_onnx/models/*
+chapter_4_onnx/models/*
 
 working/*
 !working/.gitkeep
