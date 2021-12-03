@@ -13,6 +13,8 @@ chapter_3_dvc/models/*
 
 chapter_4_onnx/models/*
 
+chapter_5_docker/models/*
+
 working/*
 !working/.gitkeep
 

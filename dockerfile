@@ -15,8 +15,8 @@ RUN pip3 install --upgrade pip && \
     mlflow       optuna \
     hydra-core 　omegaconf \
     dvc dvc[gdrive] dvc[ssh] \
-    onnx \
-    onnxruntime \
+    onnx onnxruntime \
+    fastapi uvicorn \
     jupyter \
     albumentations \
     slugify && \
