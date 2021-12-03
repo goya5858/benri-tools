@@ -5,6 +5,7 @@ input/models/*
 !input/models/.gitkeep
 
 week_0_PytorchLightning/lightning_logs/*
+week_1_mlflow/mlruns/*
 
 working/*
 !working/.gitkeep
