@@ -7,6 +7,7 @@ input/models/*
 week_0_PytorchLightning/lightning_logs/*
 week_1_mlflow/mlruns/*
 week_1_mlflow/lightning_logs/*
+week_2_Hydra/outputs/*
 
 working/*
 !working/.gitkeep
