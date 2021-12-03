@@ -46,3 +46,18 @@ ex)
     >> cd dvcfiles
     >> dvc add ../models/best-checkpoint.ckpt --file trained_model.dvc
 ```
+
+5. データ/モデルのpush
+```
+    >> dvc push --remote <送信したいサーバー名>
+```
+```
+    >> dvc push --remote storage
+
+    Enter verification code: VERYFICATION=CODE
+    Authentication successful.
+    1 file pushed         
+```
+
+6. Githubへ trained_model.dvcファイルのプッシュ  
+    データ/モデル本体の代わりに"データ/モデル.dvcファイル"をGithubにアップロードして疑似的なバージョン管理を行う
