@@ -1,7 +1,7 @@
 FastAPIを用いた簡単なアプリの実装  
 1. テスト
 ```
-    >> uvicorn app:app --port 8000 --reload
+    >> uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 ```  
 
 コマンドを実行すると、現在作業中のコンテナの外にて、  

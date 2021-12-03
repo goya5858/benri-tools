@@ -1,6 +1,4 @@
-hydra-core
-omegaconf
+uvicorn
+fastapi
 onnx
 onnxruntime
-fastapi
-uvicorn

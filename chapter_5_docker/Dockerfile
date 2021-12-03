@@ -1,7 +1,12 @@
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
-COPY ./ /app
+FROM pytorch/pytorch:latest
+
 WORKDIR /app
-RUN pip3 install --upgrade pip
-RUN pip3 install -r requirements.txt
+
+COPY ./ .
+
+# コンテナ内で必要なパッケージをインストール
+RUN pip install -r requirements.txt 
+
 EXPOSE 8000
-CMD ["uvicorn", "app:app", "--port", "8000", "--reload"]
+# FastAPIを8000ポートで待機
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
