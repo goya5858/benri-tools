@@ -20,9 +20,11 @@ class ONNXModel:
 async def home_page():
     return "<h2>Sample prediction API</h2>"
 
-@paa.get("/predict")
+@app.get("/predict")
 async def get_prediction(nums: str):
     inputs = [[float(n) for n in nums.split(" ") ]]
+    print("input      :", inputs)
     model = ONNXModel()
     pred = model.predict(inputs)
-    return pred
+    print("prediction :", pred)
+    return f"<h2>prediction {pred}</h2>"
