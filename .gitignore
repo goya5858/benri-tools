@@ -11,6 +11,8 @@ week_2_Hydra/models/*
 week_3_dvc/outputs/*
 week_3_dvc/models/*
 
+week_4_onnx/models/*
+
 working/*
 !working/.gitkeep
 
