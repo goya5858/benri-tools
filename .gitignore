@@ -4,6 +4,8 @@ input/*
 input/models/*
 !input/models/.gitkeep
 
+week_0_PytorchLightning/lightning_logs/*
+
 working/*
 !working/.gitkeep
 
