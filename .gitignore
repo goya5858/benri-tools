@@ -8,6 +8,7 @@ week_0_PytorchLightning/lightning_logs/*
 week_1_mlflow/mlruns/*
 week_1_mlflow/lightning_logs/*
 week_2_Hydra/outputs/*
+week_3_dvc/outputs/*
 
 working/*
 !working/.gitkeep
