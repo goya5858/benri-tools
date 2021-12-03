@@ -1,0 +1,5 @@
+model:
+  hidden_size: 16
+optim:
+  optim_name: Adam
+  lr        : 1e-2
