@@ -11,10 +11,10 @@ Hydraは実行コードに
 
 1. 元々のコードをHydraように変更
     ```python
-    params = OmegaConf.load("configs/config.yaml")
+    cfg = OmegaConf.load("configs/config.yaml")
 
     def main():
-        model  = PLIrisModel(cfg=params)
+        model  = PLIrisModel(cfg=cfg)
         data   = PLIrisData()
 
         trainer = Trainer(
