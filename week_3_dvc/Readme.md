@@ -61,3 +61,49 @@ ex)
 
 6. Githubへ trained_model.dvcファイルのプッシュ  
     データ/モデル本体の代わりに"データ/モデル.dvcファイル"をGithubにアップロードして疑似的なバージョン管理を行う
+
+7. モデルのリモートストレージからのpull
+```
+    >> dvc pull <pullしたいデータ/モデル>.dvc
+```
+ex) 今さっき保存したモデルをpull
+```sh
+# モデル本体がまだディレクトリに残っているため、まずは削除
+    >> rm ../models/best-checkpoint.ckpt
+
+# リモートにpushされたモデル本体をpull
+    >> dvc pull ./trained_model.dvc
+
+    A       ../models/best-checkpoint.ckpt
+    1 file added   
+```
+
+8. モデルのバージョニング By Using tagging in git
+現在のコミットのタグ付
+```
+    >> git tag -a "v1.0.0" -m "version 1.0.0"
+    >> git push origin v1.0.0
+```
+
+モデルの更新を行う
+```
+    >> cd ../
+    >> python3 train.py model.hidden_size=24
+```
+更新されたモデルをDVCのリモートストレージにPUSH
+```
+    >> cd dvcfiles
+    >> dvc add ../models/best-checkpoint-v1.ckpt --file trained_model.dvc
+    >> dvc push trained_model.dvc
+```
+更新された.dvcファイルをgithubにpushし、タグ付け
+```
+    >> git tag -a "v1.1.0" -m "version 1.1.0"
+    >> git add .
+    >> git commit -m "update model"
+    >> git push
+    >> git push origin v1.1.0
+```
+
+9. 任意のバージョンのデータ/モデルをPULL  
+    対応する.dvcファイルが保存されているtagから、dvc pullコマンドを用いてほしいデータをPullする
