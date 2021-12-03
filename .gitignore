@@ -19,5 +19,7 @@ subfiles/.ssh/id_rsa.GitHub_goya5858
 */.DS_Store
 .DS_Store
 
+MLOps-Basics-main/*
+
 working/outputs/*
 sample
