@@ -1,6 +1,7 @@
-FROM pytorchlightning/pytorch_lightning:base-conda-py3.8-torch1.10
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
 COPY ./ /app
 WORKDIR /app
-RUN pip install -r requirements.txt
+RUN pip3 install --upgrade pip
+RUN pip3 install -r requirements.txt
 EXPOSE 8000
-CMD ["uvicorn", "app:app", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--port", "8000", "--reload"]
