@@ -28,4 +28,4 @@ COPY ./subfiles/.kaggle/ /root/.kaggle
 COPY ./subfiles/.ssh /root/.ssh
 
 COPY ./subfiles/git-script-for-docker.sh /root
-ENTRYPOINT ["sh", "/root/git-script-for-docker.sh"]
+ENTRYPOINT ["source", "/root/git-script-for-docker.sh"]
