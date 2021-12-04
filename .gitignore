@@ -32,6 +32,7 @@ working/*
 !working/.gitkeep
 
 subfiles/.ssh/*
+!subfiles/.ssh/env_sample.json
 subfiles/.kaggle/kaggle.json
 subfiles/.ssh/env.json
 subfiles/.ssh/id_rsa.GitHub_goya5858
