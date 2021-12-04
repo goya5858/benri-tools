@@ -23,6 +23,7 @@ chapter_5_Docker/models/*
 
 chapter_6_GithubActions/models/*
 !chapter_6_GithubActions/models/.gitkeep
+!chapter_6_GithubActions/models/SampleModel.onnx
 
 working/*
 !working/.gitkeep
