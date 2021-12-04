@@ -1,22 +1,40 @@
-FastAPIを用いた簡単なアプリの実装  
-1. テスト
-```
-    >> uvicorn app:app --host 0.0.0.0 --port 8000 --reload
-```  
+GithubActionsを用いたCIテスト
 
-コマンドを実行すると、現在作業中のコンテナの外にて、  
-```
-    localhost:8000/  
-        へのアクセスでトップページ
-    localhost:8000/docs
-        へのアクセスで Swagger形式のDocへアクセス、実装したコマンドのテストができる
+chapter5でコンテナでパッケージ化したモデルのアップデートをする際、テストをGitHubへのPushと同時に自動的に行う -> CI
+
+ディレクトリの中身はChap.5とほぼ同じ(model本体が含まれる+sample.ipynbは除外)
+
+1. .gitフォルダが存在する親ディレクトリに
+    ```
+    .github/workflows
+    ```
+   ディレクトリを作成  
+この中にCI用の設定ファイルを作成する
+
+2. Workファイルの作成  
+Dockerコンテナを自動デプロイするジョブを設定する
+```yaml
+name: Create Docker Container
+
+on: [push]
+
+jobs: 
+  mlops-container:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./chapter_6_GithubActions
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      
+      - name: Build container
+        run: |
+          docker network create data
+          docker compose up --build
 ```
 
-2. アプリの実装  
-    作業用コンテナの外からこのディレクトリに移動し、新たにアプリデプロイ用のコンテナを起動する
-    ```
-    >> docker compose up
-     or
-    >> docker compose up --build
-    ```
-3. localhost:8000/docsへのアクセスでアプリへアクセスできる
+3. GitHibのＨＰにアクセスし、Actionsを開いて適当に設定する(ほぼデフォルトでOK)  
+GithubではデフォルトでActionsがONになっているので、基本的に2. のファイルを設置してPUSHするのみでOK
