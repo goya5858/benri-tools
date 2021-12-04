@@ -14,7 +14,8 @@ RUN pip3 install --upgrade pip && \
     torchmetrics>=0.3 \
     mlflow       optuna \
     hydra-core 　omegaconf \
-    dvc dvc[gdrive] dvc[ssh] \
+    boto3 \
+    dvc dvc[gdrive] dvc[ssh] dvc[s3]\
     onnx onnxruntime \
     fastapi uvicorn \
     jupyter \

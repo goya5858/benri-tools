@@ -25,6 +25,9 @@ chapter_6_GithubActions/models/*
 !chapter_6_GithubActions/models/.gitkeep
 !chapter_6_GithubActions/models/SampleModel.onnx
 
+chapter_7_ECR/models/*
+!chapter_7_ECR/models/.gitkeep
+
 working/*
 !working/.gitkeep
 
