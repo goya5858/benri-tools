@@ -3,6 +3,8 @@ services:
     ml-container:
         build: .
         container_name: main-container
+        env_file:
+            - ./subfiles/.ssh/aws_cli.env
         ports:
             - "10000:8888"
         volumes:
