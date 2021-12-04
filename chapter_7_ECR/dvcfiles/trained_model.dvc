@@ -1,0 +1,6 @@
+wdir: ../models
+outs:
+- md5: 5d87f01de6c37e9a8258ee66d1be159d
+  size: 1034
+  path: SampleModel.onnx
+  isexec: true
