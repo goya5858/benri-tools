@@ -13,7 +13,7 @@ chapter_2_Hydra/models/*
 
 chapter_3_DVC/outputs/*
 chapter_3_DVC/models/*
-chapter_3_DVC/.dvc
+chapter_3_DVC/.dvc/*
 !chapter_3_DVC/models/.gitkeep
 
 chapter_4_ONNX/models/*
@@ -27,7 +27,7 @@ chapter_6_GithubActions/models/*
 !chapter_6_GithubActions/models/SampleModel.onnx
 
 chapter_7_ECR/models/*
-chapter_7_ECR/.dvc
+chapter_7_ECR/.dvc/*
 !chapter_7_ECR/models/.gitkeep
 
 working/*
