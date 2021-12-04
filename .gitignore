@@ -1,19 +1,28 @@
 chapter_0_PytorchLightning/lightning_logs/*
 chapter_0_PytorchLightning/models/*
+!chapter_0_PytorchLightning/models/.gitkeep
 
-chapter_1_mlflow/mlruns/*
-chapter_1_mlflow/lightning_logs/*
-chapter_1_mlflow/models/*
+chapter_1_MLFlow/mlruns/*
+chapter_1_MLFlow/lightning_logs/*
+chapter_1_MLFlow/models/*
+!chapter_1_MLFlow/models/.gitkeep
 
 chapter_2_Hydra/outputs/*
 chapter_2_Hydra/models/*
+!chapter_2_Hydra/models/.gitkeep
 
-chapter_3_dvc/outputs/*
-chapter_3_dvc/models/*
+chapter_3_DVC/outputs/*
+chapter_3_DVC/models/*
+!chapter_3_DVC/models/.gitkeep
 
-chapter_4_onnx/models/*
+chapter_4_ONNX/models/*
+!chapter_4_ONNX/models/.gitkeep
 
-chapter_5_docker/models/*
+chapter_5_Docker/models/*
+!chapter_5_Docker/models/.gitkeep
+
+chapter_6_GithubActions/models/*
+!chapter_6_GithubActions/models/.gitkeep
 
 working/*
 !working/.gitkeep
