@@ -30,6 +30,10 @@ chapter_7_ECR/models/*
 chapter_7_ECR/.dvc/*
 !chapter_7_ECR/models/.gitkeep
 
+chapter_8_Lambda/models/*
+chapter_8_Lambda/.dvc/*
+!chapter_8_Lambda/models/.gitkeep
+
 working/*
 !working/.gitkeep
 
