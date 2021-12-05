@@ -25,4 +25,4 @@ RUN dvc pull dvcfiles/trained_model.dvc
 EXPOSE 8000
 # FastAPIを8000ポートで待機
 #CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
-CMD ["app/lambda_function.lambda_handler"]
+CMD ["lambda_function.lambda_handler"]
