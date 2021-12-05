@@ -16,6 +16,7 @@ class ONNXModel:
 
 def handler(event, context):
     model = ONNXModel()
+    print(event)
     if "resource" in event.keys():
         body = event["body"]
         body = json.loads(body)
