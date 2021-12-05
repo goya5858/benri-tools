@@ -33,4 +33,4 @@ def handler(event, context):
     else:
         inputs = [[float(n) for n in event['sentence'].split(" ") ]]
         print("input      :", inputs)
-        return model.predict(event["sentence"])
+        return model.predict(inputs)
