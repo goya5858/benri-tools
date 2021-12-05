@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:latest
+FROM public.ecr.aws/lambda/python:3.8
 
 WORKDIR /app
 
