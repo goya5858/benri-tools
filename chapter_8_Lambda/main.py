@@ -20,11 +20,17 @@ def handler(event, context):
         body = event["body"]
         body = json.loads(body)
         print(f"Got the input: {body['sentence']}")
-        response = model.predict(body["sentence"])
+
+        inputs = [[float(n) for n in body['sentence'].split(" ") ]]
+        print("input      :", inputs)
+
+        response = model.predict(inputs)
         return {
 			"statusCode": 200,
 			"headers": {},
 			"body": json.dumps(response)
 		}
     else:
+        inputs = [[float(n) for n in event['sentence'].split(" ") ]]
+        print("input      :", inputs)
         return model.predict(event["sentence"])
