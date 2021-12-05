@@ -41,7 +41,8 @@ def handler(event, context):
         body = event["body"]
         body = base64.b64decode(body).decode()
         print( body )
-        inputs = [[float(n) for n in body.split(" ") ]]
+        body = body[9:]
+        inputs = [[float(n) for n in body.split("%2C") ]]
         print("input      :", inputs)
         output = {"prediction": model.predict(inputs)}
         output = model.predict(inputs)
