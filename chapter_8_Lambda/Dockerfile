@@ -1,6 +1,6 @@
 FROM public.ecr.aws/lambda/python:3.8
 
-WORKDIR /app
+WORKDIR /
 
 COPY ./ .
 
@@ -26,6 +26,4 @@ EXPOSE 8000
 # FastAPIを8000ポートで待機
 #CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
-RUN touch __init__.py 
-# app dirのファイルを使うため
-CMD ["app.main.handler"]
+CMD ["main.handler"]
