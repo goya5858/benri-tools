@@ -1,6 +1,6 @@
 FROM public.ecr.aws/lambda/python:3.8
 
-WORKDIR /
+WORKDIR /app
 
 COPY ./ .
 
