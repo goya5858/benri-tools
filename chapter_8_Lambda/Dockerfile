@@ -26,6 +26,6 @@ EXPOSE 8000
 # FastAPIを8000ポートで待機
 #CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
-RUN sudo chmod 777 main.py
+RUN chmod 777 main.py
 
 CMD [ "main.handler" ]
