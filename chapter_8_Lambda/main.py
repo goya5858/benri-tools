@@ -19,30 +19,12 @@ def handler(event, context):
     model = ONNXModel()
     print(event)
     print("keys", event.keys())
-    if "resource" in event.keys():
-        #print("with RESOURCE")
-        #body = event["body"]
-        #print(base64.b64decode(body).decode())
-        #body = json.loads(body)
-        #print(f"Got the input: {body['sentence']}")
-#
-        #inputs = [[float(n) for n in body['sentence'].split(" ") ]]
-        #print("input      :", inputs)
-#
-        #output = model.predict(inputs)
-        #print("output     :", output)
-        return {
-			    "statusCode": 200,
-			    "headers": {},
-			    #"body": json.dumps(str(output))
-                "body": "Bye"
-		        }
-    else:
+    if "body" in event.keys():
         body = event["body"]
         body = base64.b64decode(body).decode()
-        print( body )
-        body = body[9:]
-        inputs = [[float(n) for n in body.split("%2C") ]]
+        nums = body[9:]
+        print( "body :", body, "\nnums :", nums )
+        inputs = [[float(n) for n in nums.split("%2C") ]]
         print("input      :", inputs)
         output = {"prediction": model.predict(inputs)}
         output = model.predict(inputs)
@@ -50,6 +32,9 @@ def handler(event, context):
         return {
 			    "statusCode": 200,
 			    "headers": {},
-			    #"body": json.dumps(str(output)),
-                "body": "Hellow"
+			    "body": json.dumps(str(output)),
 		        }
+    else:
+        inputs = [[float(n) for n in event['sentence'].split(",") ]]
+        print("input      :", inputs)
+        return model.predict(inputs) 
