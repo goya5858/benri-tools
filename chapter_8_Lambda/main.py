@@ -25,17 +25,20 @@ def handler(event, context):
         print("input      :", inputs)
 
         output = model.predict(inputs)
+        print("output     :", output)
         return {
 			    "statusCode": 200,
 			    "headers": {},
-			    "body": json.dumps(output)
+			    "body": json.dumps(str(output))
 		        }
     else:
         inputs = [[float(n) for n in event['sentence'].split(" ") ]]
         print("input      :", inputs)
         output = {"prediction": model.predict(inputs)}
+        output = model.predict(inputs)
+        print("output     :", output)
         return {
 			    "statusCode": 200,
 			    "headers": {},
-			    "body": json.dumps(output)
+			    "body": json.dumps(str(output))
 		        }
