@@ -1,4 +1,4 @@
-FROM bitnami/jupyter-base-notebook:latest
+FROM pytorch/pytorch:latest
 
 WORKDIR /app
 
