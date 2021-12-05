@@ -14,7 +14,7 @@ class ONNXModel:
         # Noneではなく、ONNX変換時に指定したoutput名を入れればそれを取得可能
         return onnx_pred
 
-def lambda_handler(event, context):
+def handler(event, context):
     model = ONNXModel()
     if "resource" in event.keys():
         body = event["body"]
