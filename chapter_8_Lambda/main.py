@@ -22,11 +22,10 @@ def handler(event, context):
     if "body" in event.keys():
         body = event["body"]
         body = base64.b64decode(body).decode()
-        nums = body[9:]
+        nums = body[9:] #body is "sentence=num%2Cnum%2Cnum%2cnum"
         print( "body :", body, "\nnums :", nums )
         inputs = [[float(n) for n in nums.split("%2C") ]]
         print("input      :", inputs)
-        output = {"prediction": model.predict(inputs)}
         output = model.predict(inputs)
         print("output     :", output)
         return {
@@ -37,4 +36,9 @@ def handler(event, context):
     else:
         inputs = [[float(n) for n in event['sentence'].split(",") ]]
         print("input      :", inputs)
-        return model.predict(inputs) 
+        output = model.predict(inputs)
+        return {
+			    "statusCode": 200,
+			    "headers": {},
+			    "body": json.dumps(str(output)),
+		        }
