@@ -24,13 +24,18 @@ def handler(event, context):
         inputs = [[float(n) for n in body['sentence'].split(" ") ]]
         print("input      :", inputs)
 
-        response = model.predict(inputs)
+        output = model.predict(inputs)
         return {
-			"statusCode": 200,
-			"headers": {},
-			"body": json.dumps(response)
-		}
+			    "statusCode": 200,
+			    "headers": {},
+			    "body": json.dumps(output)
+		        }
     else:
         inputs = [[float(n) for n in event['sentence'].split(" ") ]]
         print("input      :", inputs)
-        return model.predict(inputs)
+        output = {"prediction": model.predict(inputs)}
+        return {
+			    "statusCode": 200,
+			    "headers": {},
+			    "body": json.dumps(output)
+		        }
