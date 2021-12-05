@@ -1,7 +1,9 @@
-ECRへGitHubActionsで作成されたDockerImageをPush
+Lambdaへのコンテナアプリのデプロイ
 
-test_awscli.ipynbを実行することで、AWS S3をDVCのストレージ化 & S3へのモデル本体のPush, Pullのテストを行うことができる
+1. 使用するDockerImageのベースは  
+    　public.ecr.aws/lambda/python:3.8  
+    とする
 
-```
->> aws configure get aws_access_key_id
-```
+2. working_dirは変更しない！！！
+
+3. CMD [file名.function名]で設定する
