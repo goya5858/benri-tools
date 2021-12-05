@@ -1,4 +1,4 @@
-FROM bitnami/pytorch:latest
+FROM pytorch/pytorch:latest
 
 WORKDIR /app
 
