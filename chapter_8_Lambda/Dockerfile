@@ -1,6 +1,6 @@
 FROM pytorch/pytorch:latest
 
-WORKDIR /app
+WORKDIR /
 
 COPY ./ .
 
