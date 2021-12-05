@@ -1,4 +1,4 @@
-FROM bitnami/jupyter-base-notebook:latest
+FROM bitnami/pytorch:latest
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ ENV AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
 
 # コンテナ内で必要なパッケージをインストール
 RUN pip install -r requirements.txt 
-RUN pip install dvc dvc[s3]
+RUN pip install dvc[s3]
 
 # DVC pulling model stored at remote-strage
 RUN dvc init --no-scm
