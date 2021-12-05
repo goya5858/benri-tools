@@ -18,6 +18,7 @@ class ONNXModel:
 def handler(event, context):
     model = ONNXModel()
     print(event)
+    print("keys", event.keys())
     if "resource" in event.keys():
         #print("with RESOURCE")
         #body = event["body"]
@@ -37,12 +38,14 @@ def handler(event, context):
                 "body": "Bye"
 		        }
     else:
-        #print("without RESOURCE")
-        #inputs = [[float(n) for n in event['sentence'].split(" ") ]]
-        #print("input      :", inputs)
-        #output = {"prediction": model.predict(inputs)}
-        #output = model.predict(inputs)
-        #print("output     :", output)
+        body = event["body"]
+        body = base64.b64decode(body).decode()
+        print( body )
+        inputs = [[float(n) for n in body.split(" ") ]]
+        print("input      :", inputs)
+        output = {"prediction": model.predict(inputs)}
+        output = model.predict(inputs)
+        print("output     :", output)
         return {
 			    "statusCode": 200,
 			    "headers": {},
