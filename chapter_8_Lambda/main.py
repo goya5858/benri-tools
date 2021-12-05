@@ -1,4 +1,5 @@
 import json
+import base64
 import onnxruntime as ort 
 
 class ONNXModel:
@@ -19,6 +20,7 @@ def handler(event, context):
     print(event)
     if "resource" in event.keys():
         body = event["body"]
+        print(base64.b64decode(body).decode())
         body = json.loads(body)
         print(f"Got the input: {body['sentence']}")
 
