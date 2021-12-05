@@ -1,8 +1,9 @@
 FROM public.ecr.aws/lambda/python:3.8
 
-WORKDIR /
+#WORKDIR /    #### これあると実行できなくなる、、、　気を付けて
 
-COPY ./ .
+#COPY ./ .
+COPY . ${LAMBDA_TASK_ROOT}
 
 ARG AWS_ACCESS_KEY_ID
 ARG AWS_SECRET_ACCESS_KEY
@@ -25,7 +26,5 @@ RUN dvc pull dvcfiles/trained_model.dvc
 EXPOSE 8000
 # FastAPIを8000ポートで待機
 #CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
-
-RUN chmod 777 main.py
 
 CMD [ "main.handler" ]
