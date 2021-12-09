@@ -11,6 +11,11 @@ chapter_2_Hydra/outputs/*
 chapter_2_Hydra/models/*
 !chapter_2_Hydra/models/.gitkeep
 
+chapter_2.5_Optuna/lightning_logs
+chapter_2.5_Optuna/mlruns
+chapter_2.5_Optuna/models
+!chapter_2.5_Optuna/models/.gitkeep
+
 chapter_3_DVC/outputs/*
 chapter_3_DVC/models/*
 chapter_3_DVC/.dvc/*
