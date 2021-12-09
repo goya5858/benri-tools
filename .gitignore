@@ -13,6 +13,7 @@ chapter_2_Hydra/models/*
 
 chapter_2.5_Optuna/lightning_logs
 chapter_2.5_Optuna/mlruns
+chapter_2.5_Optuna/outputs
 chapter_2.5_Optuna/models
 !chapter_2.5_Optuna/models/.gitkeep
 
